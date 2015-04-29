@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  <bean id="add1" class="com.techknowedge.Address">
+  <constructor-arg value="delhi"></constructor-arg>
+  <constructor-arg value="delhi"></constructor-arg>
+  <constructor-arg value="india"></constructor-arg>
+  </bean>
+<bean id="empBean" class="com.techknowedge.Employee">  
+<property name="name" value="anu chaudhary"></property>
+<property name="id" value="100"></property>  
+<constructor-arg>
+<ref bean="add1"/>
+</constructor-arg>
+<constructor-arg>
+<list>
+<ref bean="dpt1"></ref>
+<ref bean="dpt2"></ref>
+</list>
+</constructor-arg>
+</bean>
+<bean id="empBean1" class="com.techknowedge.Employee">
+<property name="name" value="arv"></property>
+<property name="id" value="101"></property>
+<constructor-arg><ref bean="add1"></ref></constructor-arg>
+<constructor-arg>
+<list>
+<ref bean="dpt2"></ref>
+<ref bean="dpt3"></ref>
+</list>
+</constructor-arg>
+</bean>   
+<bean id="empBean2"  class="com.techknowedge.Employee">
+<constructor-arg value= "swati" type="String"></constructor-arg>
+<constructor-arg value="102" type="int"></constructor-arg>
+<constructor-arg>
+<ref bean="add2"></ref>
+</constructor-arg>
+<constructor-arg>
+<list>
+<ref bean="dpt1"></ref>
+<ref bean="dpt2"></ref>
+<ref bean="dpt3"></ref>
+</list>
+</constructor-arg>
+</bean>
+<bean id="add2" class="com.techknowedge.Address">
+<constructor-arg value="mumbai"></constructor-arg>
+<constructor-arg value="maharashtra"></constructor-arg>
+<constructor-arg value="india"></constructor-arg>
+</bean>
+<bean id="dpt1" class="com.techknowedge.Departments">
+<constructor-arg value="1000" type="int"></constructor-arg>
+<constructor-arg value="admin"></constructor-arg>
+</bean>
+<bean id="dpt2" class="com.techknowedge.Departments">
+<constructor-arg value="1001" type="int"></constructor-arg>
+<constructor-arg value="infra"></constructor-arg>
+</bean>
+<bean id="dpt3" class="com.techknowedge.Departments">
+<constructor-arg value="1002" type="int"></constructor-arg>
+<constructor-arg value="development"></constructor-arg>
+</bean>
+</beans>  
